@@ -34,7 +34,7 @@ makePikachuDancer.prototype.step = function() {
   $(this.$node).mouseleave(function() {
     $(this).animate({
       'marginLeft': '5%',
-      'marginTop': '50%'
+      'marginTop': '53%'
     });
   });
 };
