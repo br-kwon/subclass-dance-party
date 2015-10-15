@@ -37,8 +37,13 @@ makePikachuDancer.prototype.step = function() {
       'marginTop': '53%'
     });
   });
+
 };
 
 makePikachuDancer.prototype.setPosition = function() {
   makeDancer.prototype.setPosition.call(this);
+};
+
+makePikachuDancer.prototype.lineUp = function() {
+  $(this.$node).align({right: window, top: window});
 };
