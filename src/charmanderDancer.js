@@ -1,15 +1,18 @@
 var makeCharmanderDancer = function(top, left, timeBetweenSteps) {
-  makePokemonDancer.apply(this, arguments);
-  this.$node = $('<img src="img/charmander.png" class="pokemon">');
+  this.top = 500;
+  this.left = 500;
+  makeDancer.apply(this, arguments);
+  this.$node = $('<img src="img/charmander.png" class="charmander pokemonBefore">');
+  this.$fire = $('<div class="fire"></div>');
 };
 
-makeCharmanderDancer.prototype = Object.create(makePokemonDancer.prototype);
+makeCharmanderDancer.prototype = Object.create(makeDancer.prototype);
 
 makeCharmanderDancer.prototype.constructor = makeCharmanderDancer;
 
 makeCharmanderDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
-  makePokemonDancer.prototype.step.call(this);
+  makeDancer.prototype.step.call(this);
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
@@ -17,20 +20,26 @@ makeCharmanderDancer.prototype.step = function() {
   // similarities across Pokemon: doubles in size, waddles
     // use .height(size) / .width(size) to double size
 
-
-    var on = false;
-    $(this.$node).click(function() {
-    if (!on) {
-      $(this).stop().animate({
-        marginLeft: '500px'
-      }, 200);
-      on = true;
-    } else {
-      $(this).stop().animate({
-        marginLeft: '300px'
-      }, 200);
-      on = false;
-    }
+  $(this.$node).click(function() {
+    $(this).toggleClass('pokemonBefore');
   });
 
+  $(this.$node).jrumble();
+
+  $(this.$node).hover(function() {
+    $(this).trigger('startRumble');
+  }, function() {
+    $(this).trigger('stopRumble');
+  });
+
+  $(this.$node).mouseleave(function() {
+    $(this).animate({
+      'marginLeft': '65%',
+      'marginTop': '7%'
+    });
+  });
+};
+
+makeCharmanderDancer.prototype.setPosition = function() {
+  makeDancer.prototype.setPosition.call(this);
 };

@@ -1,16 +1,15 @@
-var makePokemonDancer = function(top, left, timeBetweenSteps) {
-  debugger;
+var makePikachuDancer = function(top, left, timeBetweenSteps) {
   this.top = 500;
   this.left = 500;
   makeDancer.apply(this, arguments);
-  this.$node = $('<img src="img/charmander.png" class="pokemon pokemonBefore">');
+  this.$node = $('<img src="img/pikachu.png" class="pikachu pokemonBefore">');
 };
 
-makePokemonDancer.prototype = Object.create(makeDancer.prototype);
+makePikachuDancer.prototype = Object.create(makeDancer.prototype);
 
-makePokemonDancer.prototype.constructor = makePokemonDancer;
+makePikachuDancer.prototype.constructor = makePikachuDancer;
 
-makePokemonDancer.prototype.step = function() {
+makePikachuDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   makeDancer.prototype.step.call(this);
   // toggle() is a jQuery method to show/hide the <span> tag.
@@ -34,13 +33,12 @@ makePokemonDancer.prototype.step = function() {
 
   $(this.$node).mouseleave(function() {
     $(this).animate({
-      'marginLeft': '800px',
-      'marginTop': '120px'
+      'marginLeft': '5%',
+      'marginTop': '50%'
     });
   });
-
 };
 
-makePokemonDancer.prototype.setPosition = function() {
+makePikachuDancer.prototype.setPosition = function() {
   makeDancer.prototype.setPosition.call(this);
 };
