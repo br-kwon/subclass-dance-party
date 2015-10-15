@@ -22,7 +22,7 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer {
+.dancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
@@ -32,8 +32,20 @@ body, a:link, a:visited, a:active{
   width: 7%;
   height: 10%;
 }
-.pokemon{
-  position: relative;
+.charmander{
+  position: fixed;
   width: 270;
   height: 310;
+}
+.pikachu{
+  position: fixed;
+  width: 20%;
+  height: 20%;
+}
+.fire{
+  position: relative;
+  height: 30;
+  width: 30;
+  float: left;
+  background-image: url('img/fire.png');
 }
