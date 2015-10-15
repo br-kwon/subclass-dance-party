@@ -27,13 +27,13 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.pokemonBefore{
+  position: relative;
+  width: 7%;
+  height: 10%;
+}
 .pokemon{
   position: relative;
   width: 270;
   height: 310;
-}
-.pokemonBefore{
-  position: relative;
-  width: 10%;
-  height: 10%;
 }

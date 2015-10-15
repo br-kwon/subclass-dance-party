@@ -30,7 +30,14 @@ makePokemonDancer.prototype.step = function() {
     $(this).trigger('startRumble');
   }, function() {
     $(this).trigger('stopRumble');
-  })
+  });
+
+  $(this.$node).mouseleave(function() {
+    $(this).animate({
+      'marginLeft': '800px',
+      'marginTop': '120px'
+    });
+  });
 
 };
 
