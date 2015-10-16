@@ -11,7 +11,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .addPokemonDancerButton, .lineUp {
+.title, .addDancerButton, .addPokemonDancerButton, .lineUp, .swap {
   padding:5px 12px;
   float:right;
 }
@@ -25,12 +25,12 @@ body, a:link, a:visited, a:active{
 .dancer{
   border:10px solid red;
   border-radius:10px;
-  position:absolute;
+  position: relative;
 }
 .pokemonBefore{
   position: relative;
-  width: 7%;
-  height: 10%;
+  width: 8%;
+  height: 12%;
 }
 .charmander{
   position: relative;
@@ -43,9 +43,10 @@ body, a:link, a:visited, a:active{
   height: 20%;
 }
 .fire{
-  position: relative;
+  vertical-align: top;
+  margin-top: 55px;
+  margin-left: -55px;
   height: 30;
   width: 30;
-  float: left;
   background-image: url('img/fire.png');
 }

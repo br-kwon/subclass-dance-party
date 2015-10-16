@@ -16,7 +16,7 @@ $(document).ready(function() {
      * to the stage.
      */
     var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
-
+                                                  
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
@@ -27,6 +27,31 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+
+    if(dancer instanceof makeBlinkyDancer){
+      dancer.setRandomColor();
+    };
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
+
+  $('.lineUp').on('click', function(event) {
+    window.dancers.forEach(function(dancer){
+      // debugger;
+      dancer.setPosition(100, 100); 
+    });
+  });
+
+  $('.swap').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length-1; i++) {
+      var topCurrent = window.dancers[i].top;
+      var leftCurrent = window.dancers[i].left;
+      var topNext = window.dancers[i + 1].top;
+      var leftNext = window.dancers[i + 1].left;
+
+      window.dancers[i].setPosition(topNext, leftNext);
+      window.dancers[i + 1].setPosition(topCurrent, leftCurrent);
+    }
+  });
+
 });

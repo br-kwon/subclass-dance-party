@@ -1,6 +1,4 @@
 var makeCharmanderDancer = function(top, left, timeBetweenSteps) {
-  this.top = 500;
-  this.left = 500;
   makeDancer.apply(this, arguments);
   this.$node = $('<img src="img/charmander.png" class="charmander pokemonBefore">');
   this.$fire = $('<div class="fire"></div>');
@@ -32,14 +30,14 @@ makeCharmanderDancer.prototype.step = function() {
     $(this).trigger('stopRumble');
   });
 
+  $(this.$node).mouseenter(function() {
+    $(this).append('<img src="img/fire.png" class="fire" />')
+  });
+
   $(this.$node).mouseleave(function() {
     $(this).animate({
       'marginLeft': '65%',
       'marginTop': '7%'
     });
   });
-};
-
-makeCharmanderDancer.prototype.setPosition = function() {
-  makeDancer.prototype.setPosition.call(this);
 };

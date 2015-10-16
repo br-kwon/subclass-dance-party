@@ -1,6 +1,4 @@
 var makePikachuDancer = function(top, left, timeBetweenSteps) {
-  this.top = 500;
-  this.left = 500;
   makeDancer.apply(this, arguments);
   this.$node = $('<img src="img/pikachu.png" class="pikachu pokemonBefore">');
 };
@@ -38,12 +36,4 @@ makePikachuDancer.prototype.step = function() {
     });
   });
 
-};
-
-makePikachuDancer.prototype.setPosition = function() {
-  makeDancer.prototype.setPosition.call(this);
-};
-
-makePikachuDancer.prototype.lineUp = function() {
-  $(this.$node).align({right: window, top: window});
 };
